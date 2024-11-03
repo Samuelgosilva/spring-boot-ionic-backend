@@ -1,5 +1,7 @@
 package com.samuelgoncalves.projetomc.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -17,6 +19,7 @@ public class Produto implements Serializable {
     private String nome;
     private Double preco;
 
+    @JsonBackReference
     @ManyToMany
     @JoinTable(name = "TB_PRODUTO_CATEGORIA",
     joinColumns = @JoinColumn(name = "produto_id"),

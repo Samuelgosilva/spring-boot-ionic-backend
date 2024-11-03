@@ -17,7 +17,7 @@ import java.util.List;
 public class CategoriaResource {
 
     @Autowired
-    private CategoriaService service;
+    CategoriaService service;
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<?> findById(@PathVariable Integer id){ //retorna busca por ID

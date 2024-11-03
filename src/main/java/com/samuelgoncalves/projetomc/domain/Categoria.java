@@ -1,9 +1,7 @@
 package com.samuelgoncalves.projetomc.domain;
-
 import jakarta.persistence.*;
-
 import java.io.Serializable;
-import java.util.Objects;
+import java.util.*;
 
 @Entity
 @Table(name = "tb_categoria")
@@ -13,6 +11,10 @@ public class Categoria implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
+
+    @ManyToMany(mappedBy = "categorias")
+    private List<Produto> produtos = new ArrayList<>();
+
 
     public Categoria(){
     }
@@ -36,6 +38,10 @@ public class Categoria implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
     }
 
     @Override

@@ -18,10 +18,10 @@ public class CategoriaResource {
 
     @Autowired
     private CategoriaService service;
-    @GetMapping(value = "/{id}")
-    public ResponseEntity<?> findById(@PathVariable Integer id){
-        Categoria obj = service.buscarId(id);
 
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<?> findById(@PathVariable Integer id){ //retorna busca por ID
+        Categoria obj = service.buscarId(id);
         return ResponseEntity.ok().body(obj);
     }
 }

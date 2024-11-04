@@ -1,5 +1,6 @@
 package com.samuelgoncalves.projetomc.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -11,6 +12,7 @@ import java.util.Objects;
 @Table(name = "tb_item_pedido")
 public class ItemPedido implements Serializable {
 
+    @JsonIgnore
     @EmbeddedId
     private ItemPedidoPK id = new ItemPedidoPK();
 
@@ -28,10 +30,11 @@ public class ItemPedido implements Serializable {
         this.quantidade = quantidade;
         this.preco = preco;
     }
-
+    @JsonIgnore
     public Pedido getPedido(){
         return id.getPedido();
     }
+
 
     public Produto getProduto(){
         return id.getProduto();

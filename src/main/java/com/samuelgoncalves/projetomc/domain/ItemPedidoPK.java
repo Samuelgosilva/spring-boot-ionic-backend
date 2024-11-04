@@ -1,11 +1,13 @@
 package com.samuelgoncalves.projetomc.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 import java.io.Serializable;
 import java.util.Objects;
+
 
 @Embeddable
 public class ItemPedidoPK implements Serializable {

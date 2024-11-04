@@ -1,6 +1,6 @@
 package com.samuelgoncalves.projetomc.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;

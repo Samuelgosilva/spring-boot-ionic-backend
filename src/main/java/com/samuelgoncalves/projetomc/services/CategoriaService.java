@@ -1,6 +1,7 @@
 package com.samuelgoncalves.projetomc.services;
 
 import com.samuelgoncalves.projetomc.domain.Categoria;
+import com.samuelgoncalves.projetomc.dto.CategoriaDTO;
 import com.samuelgoncalves.projetomc.repositories.CategoriaRepository;
 import com.samuelgoncalves.projetomc.services.exceptions.DataIntegrityException;
 import com.samuelgoncalves.projetomc.services.exceptions.ObjectNotFoundException;
@@ -58,5 +59,9 @@ public class CategoriaService {
         PageRequest pageRequest = PageRequest.of(page, linesPerPage, Sort.Direction.valueOf(direction), orderBy);
         return repo.findAll(pageRequest);
 
+    }
+
+    public Categoria fromDTO(CategoriaDTO objDTO){
+        return new Categoria(objDTO.getId(), objDTO.getNome());
     }
 }
